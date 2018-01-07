@@ -1,5 +1,7 @@
 package com.demo.android.bmi_basic;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,8 +51,28 @@ public class BMIActivity extends AppCompatActivity{
         }
     };
 
+
+    DialogInterface.OnClickListener btnOKlisten = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            System.out.println("Click Confirm. YA");
+        }
+    } ;
+
+    DialogInterface.OnClickListener btnlistenCancel = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            System.out.println("Click Cancel.  God");
+        }
+    };
+
     private void openOptionsDialog() {
-        //new AlertDialog.Builder(BMIActivity.this).setTitle(R.string.dialog_title)
+        AlertDialog.Builder alertdialog = new AlertDialog.Builder(BMIActivity.this);
+        alertdialog.setTitle(R.string.dialog_title);
+        alertdialog.setMessage(R.string.dialog_message);
+        alertdialog.setPositiveButton(R.string.dialog_btn_confirm,btnOKlisten);
+        alertdialog.setNegativeButton(R.string.dialog_btn_cancel,btnlistenCancel);
+        alertdialog.show();
     }
 
     private void showResult(double bmi) {

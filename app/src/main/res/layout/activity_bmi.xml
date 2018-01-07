@@ -39,8 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25sp"
-        android:text="@string/bmi_btn"
-        android:onClick="onClick"/>
+        android:text="@string/bmi_btn"/>
 
     <TextView
         android:id="@+id/result"
