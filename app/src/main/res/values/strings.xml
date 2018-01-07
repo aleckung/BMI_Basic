@@ -9,4 +9,6 @@
     <string name="dialog_message">Android BMI Calc</string>
     <string name="dialog_btn_confirm">確認</string>
     <string name="dialog_btn_cancel">取消</string>
+    <string name="toast_confirm">你確認了</string>
+    <string name="toast_cancel">你不該取消的</string>
 </resources>
